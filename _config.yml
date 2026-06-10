@@ -1,0 +1,29 @@
+name: "Lyu Lab"
+description: "The Evnin Family Laboratory of Computational Molecular Discovery at The Rockefeller University, led by Jiankun Lyu."
+
+url: "https://lyulab.org"
+
+permalink: pretty
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
+exclude:
+        - .sass-cache/
+        - .jekyll-cache/
+        - gemfiles/
+        - Gemfile
+        - Gemfile.lock
+        - node_modules/
+        - vendor/bundle/
+        - vendor/cache/
+        - vendor/gems/
+        - vendor/ruby/
+        - template/
+        - README.md
+
+collections:
+        members:
+                output: true
+        publications:
+                output: true
