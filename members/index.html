@@ -8,43 +8,64 @@ group: members
 
 <p>The Lyu lab welcomes people of all backgrounds. If you are interested in joining us, please see our <a href="/join">positions</a> page.</p>
 
-{% assign people = site.members | sort: "order" %}
+{% assign people = site.members | where_exp: "m", "m.alumni != true" | sort: "order" %}
 {% for member in people %}
-        <hr>
-        <div id="{{ member.name }}" class="row" style="padding-top: 60px; margin-top: -60px;">
-            <div class="col-sm-4">
-                <img class="img-fluid" src="{{ member.image }}" alt="{{ member.name }}" width="365" height="365" loading="lazy" decoding="async" onerror="this.src='/static/img/members/placeholder.svg'"><br>
-                <strong>{{ member.name }}</strong> <br>
-                {% if member.pronouns %}<em>{{ member.pronouns }}</em> <br>{% endif %}
-                {{ member.position | markdownify | remove: '<p>' | remove: '</p>' }} <br>
-                <em>{{ member.email }}</em> <br>
-                {% if member.website %}
-                  <a style="overflow-wrap: break-word;" href="{{ member.website }}">Profile</a> <br>
-                {% endif %}
-                {% if member.scholar %}
-                  <a href="https://scholar.google.com"><img class="inline-block mem-icon" src="/static/img/logo/gscholar_logo.svg"></a>
-                  <a href="https://scholar.google.com/citations?user={{ member.scholar }}"> Google Scholar </a> <br>
-                {% endif %}
-                {% if member.orcid %}
-                  <a href="https://orcid.org"><img class="inline-block mem-icon" src="/static/img/logo/orcid_logo.svg"></a>
-                  <a href="https://orcid.org/{{ member.orcid }}"> {{ member.orcid }}</a> <br>
-                {% endif %}
-                {% if member.twitter %}
-                  <a href="https://twitter.com"><img class="inline-block mem-icon" src="/static/img/logo/twitter_logo.svg"></a>
-                  <a href="https://twitter.com/{{ member.twitter }}"> @{{ member.twitter }} </a> <br>
-                {% endif %}
-                {% if member.github %}
-                  <a href="https://github.com"><img class="inline-block mem-icon" src="/static/img/logo/github_logo.svg"></a>
-                  <a href="https://github.com/{{ member.github }}"> {{ member.github }} </a> <br>
-                {% endif %}
-                {% if member.linkedin %}
-                  <a href="https://www.linkedin.com"><img class="inline-block mem-icon" src="/static/img/logo/linkedin_logo.svg"></a>
-                  <a href="https://www.linkedin.com/in/{{ member.linkedin }}"> LinkedIn </a> <br>
-                {% endif %}
-            </div>
-            <div class="col-sm-8">
-                {% if member.education %}<p class="text-muted"><small>{{ member.education }}</small></p>{% endif %}
-                {{ member.description | markdownify }}
+        <div id="{{ member.name }}" class="member-card">
+            {% assign has_photo = true %}
+            {% if member.image == nil or member.image == "" or member.image contains "placeholder" %}{% assign has_photo = false %}{% endif %}
+            {% if has_photo %}
+            <img class="member-photo" src="{{ member.image }}" alt="{{ member.name }}" width="148" height="148" loading="lazy" decoding="async" onerror="this.src='/static/img/members/placeholder.svg'">
+            {% else %}
+            {% assign nameparts = member.name | split: " " %}
+            <div class="member-photo member-initials">{{ nameparts | first | slice: 0 }}{{ nameparts | last | slice: 0 }}</div>
+            {% endif %}
+            <div class="member-body">
+                <div class="member-name">{{ member.name }}</div>
+                <div class="member-role">{{ member.position | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+                <div class="member-meta">
+                    {% if member.education %}<div>{{ member.education }}</div>{% endif %}
+                    {% if member.note %}<div>{{ member.note }}</div>{% endif %}
+                    {% if member.startdate %}<div>Joined {{ member.startdate | first | date: "%Y" }}</div>{% endif %}
+                    {% if member.email %}<div>{{ member.email }}</div>{% endif %}
+                </div>
+                <div class="member-links">
+                    {% if member.website %}
+                      <a style="overflow-wrap: break-word;" href="{{ member.website }}">Profile</a>
+                    {% endif %}
+                    {% if member.scholar %}
+                      <a href="https://scholar.google.com/citations?user={{ member.scholar }}"><img class="mem-icon" src="/static/img/logo/gscholar_logo.svg" alt=""> Google Scholar</a>
+                    {% endif %}
+                    {% if member.orcid %}
+                      <a href="https://orcid.org/{{ member.orcid }}"><img class="mem-icon" src="/static/img/logo/orcid_logo.svg" alt=""> ORCID</a>
+                    {% endif %}
+                    {% if member.twitter %}
+                      <a href="https://twitter.com/{{ member.twitter }}"><img class="mem-icon" src="/static/img/logo/twitter_logo.svg" alt=""> @{{ member.twitter }}</a>
+                    {% endif %}
+                    {% if member.github %}
+                      <a href="https://github.com/{{ member.github }}"><img class="mem-icon" src="/static/img/logo/github_logo.svg" alt=""> {{ member.github }}</a>
+                    {% endif %}
+                    {% if member.linkedin %}
+                      <a href="https://www.linkedin.com/in/{{ member.linkedin }}"><img class="mem-icon" src="/static/img/logo/linkedin_logo.svg" alt=""> LinkedIn</a>
+                    {% endif %}
+                </div>
             </div>
         </div>
 {% endfor %}
+
+{% assign alumni = site.members | where_exp: "m", "m.alumni == true" | sort: "enddate" | reverse %}
+{% if alumni.size > 0 %}
+<h2 class="alumni-heading">Alumni</h2>
+<div class="alumni-list">
+{% for member in alumni %}
+        {% assign start_year = member.startdate | first | date: "%Y" %}
+        {% assign end_year = member.enddate | first | date: "%Y" %}
+        <div class="alum-row">
+            <div class="alum-name">{{ member.name }}</div>
+            <div class="alum-role">
+                {{ member.position }}{% if start_year %} <span class="alum-period">&middot; {{ start_year }}{% if end_year and end_year != start_year %}&ndash;{{ end_year }}{% endif %}</span>{% endif %}
+            </div>
+            {% if member.current and member.current != "" %}<div class="alum-current">Now: {{ member.current }}</div>{% endif %}
+        </div>
+{% endfor %}
+</div>
+{% endif %}

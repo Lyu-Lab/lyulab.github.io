@@ -4,17 +4,14 @@ layout: home
 group: home
 ---
 
-# Welcome to the Lyu Lab!
-{: .display-4}
-<br>
-We are the **Evnin Family Laboratory of Computational Molecular Discovery** at [The Rockefeller University](https://www.rockefeller.edu).
-{: .welcomefont}
-
-The lab aims to understand the molecular interactions between small molecules and their biological targets, and to use this knowledge to build software for discovering novel ligands that shed light on biological processes and aid in the evaluation of potential therapeutic targets.
-{: .welcomefont}
-
-We are especially interested in [**molecular docking**](/research) — a structure-based virtual screening method that can evaluate virtual libraries of great size and diversity, selecting the best-fitting molecules for synthesis and testing. By leveraging "make-on-demand" libraries containing billions of molecules, we pursue structure-based drug design and the creation of new chemical tools for biology.
-{: .welcomefont}
-
-We are located in New York City at the Mission Bay of biomedical research — the Tri-Institutional community of Rockefeller, Weill Cornell Medicine, and Memorial Sloan Kettering.
-{: .welcomefont}
+<div class="home-hero">
+  <div class="home-video">
+    <div class="video-container">
+      <iframe src="https://www.youtube-nocookie.com/embed/K8lx4xaa-Lg?autoplay=1&mute=1&loop=1&playlist=K8lx4xaa-Lg&playsinline=1" title="How DOCK3 works" frameborder="0" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="home-welcome">
+    <h1 class="display-4">Welcome to the Laboratory of Computational Molecular Discovery</h1>
+    <p class="welcomefont">The laboratory of Computational Molecular Discovery aims to understand the molecular interactions between small molecules and their biological targets, and to use this knowledge to create software for discovering novel ligands that can shed light on biological processes and aid in the evaluation of potential therapeutic targets.</p>
+  </div>
+</div>

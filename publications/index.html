@@ -6,29 +6,19 @@ group: publications
 
 <h1>Publications</h1>
 
-<p>Lab members are shown in <strong>bold</strong>; <sup>&#42;</sup> denotes equal contribution. A full list is available on <a href="https://scholar.google.com/citations?user=Gg9lqN8AAAAJ&hl=en">Google Scholar</a>.</p>
+<p class="pub-legend">Lab members are shown in <strong>bold</strong>; <sup>&dagger;</sup> denotes co-first authorship and <sup>&#42;</sup> denotes co-corresponding authorship. A full list is available on <a href="https://scholar.google.com/citations?user=Gg9lqN8AAAAJ&hl=en">Google Scholar</a>.</p>
 
-<div class="container-fluid">
-{% assign sorted = site.publications | sort: "pub_date" | reverse %}
-{% for publication in sorted %}
-    <hr>
-    <div class="row">
-        {% if publication.image %}
-        <div class="col-sm-3">
-            <img class="img-fluid" src="{{ publication.image }}" alt="{{ publication.title }}" loading="lazy" onerror="this.style.display='none'">
-        </div>
-        <div class="col-sm-9">
-        {% else %}
-        <div class="col-sm-12">
-        {% endif %}
-            <p style="margin-bottom: 4px;"><strong>{{ publication.title }}</strong></p>
-            <p style="margin-bottom: 4px;">{{ publication.authors | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-            <p style="margin-bottom: 4px;"><em>{{ publication.journal }}</em>, {{ publication.pub_date | date: "%Y" }}</p>
-            {% if publication.pdf %}<a class="btn btn-sm btn-outline-secondary" href="{{ publication.pdf }}">PDF</a>{% endif %}
-            {% for link in publication.links %}
-                <a class="btn btn-sm btn-outline-secondary" href="{{ link.url }}">{{ link.name }}</a>
-            {% endfor %}
-        </div>
-    </div>
+{% assign selected = site.publications | where_exp: "p", "p.key == true" | sort: "pub_date" | reverse %}
+{% assign additional = site.publications | where_exp: "p", "p.key != true" | sort: "pub_date" | reverse %}
+
+<h2 class="pub-section">Selected publications after Rockefeller</h2>
+{% for publication in selected %}
+    {% include pub_card.html pub=publication %}
 {% endfor %}
-</div>
+
+{% if additional.size > 0 %}
+<h2 class="pub-section">Complete list of publications</h2>
+{% for publication in additional %}
+    {% include pub_card.html pub=publication %}
+{% endfor %}
+{% endif %}

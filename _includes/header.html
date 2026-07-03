@@ -6,9 +6,11 @@
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ site.description }}">
-    <meta name="theme-color" content="#7c2529">
+    <meta name="theme-color" content="#235a9e">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
     <link rel="preload" href="/static/css/bootstrap.min.css" as="style">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link href="/static/css/syntax.css" rel="stylesheet">
@@ -18,9 +20,9 @@
   <body>
 
     <!-- Static navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #7c2529">
+    <nav class="navbar navbar-expand-lg navbar-light site-navbar">
         <a class="navbar-brand" href="/">{{site.name}}</a>
-        <a href="https://www.rockefeller.edu" rel="noopener" class="navbar-text text-white" style="font-size: 0.9rem;">The Rockefeller University</a>
+        <a href="https://www.rockefeller.edu" rel="noopener" class="navbar-text navbar-affil">The Rockefeller University</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

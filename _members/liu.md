@@ -1,11 +1,12 @@
 ---
 name: Yuqi Liu
 startdate: [2023-09-01]
-enddate: []
-order: 6
+enddate: [2026-06-01]
+order: 2
+alumni: true
 image: /static/img/members/placeholder.svg
 position: Research Assistant
+current: "Master's student in Data Science, New York University"
 email: yliu03 (at) rockefeller.edu
 education: "B.A., 2022, NYU"
-description: "Yuqi is a research assistant in the lab. She received her B.A. from NYU in 2022."
 ---

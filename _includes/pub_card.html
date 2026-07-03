@@ -1,0 +1,24 @@
+<div class="pub-card">
+    <div class="row no-gutters">
+        {% if include.pub.image %}
+        <div class="col-sm-3 pr-sm-3 mb-2 mb-sm-0">
+            <img class="img-fluid rounded" src="{{ include.pub.image }}" alt="{{ include.pub.title }}" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="col-sm-9">
+        {% else %}
+        <div class="col-12">
+        {% endif %}
+            <div class="pub-journal">{{ include.pub.journal }}{% unless include.pub.submitted %} &middot; {{ include.pub.pub_date | date: "%Y" }}{% endunless %}</div>
+            <div class="pub-title">{{ include.pub.title }}</div>
+            <div class="pub-authors">{{ include.pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+            {% if include.pub.pdf or include.pub.links %}
+            <div class="pub-links">
+                {% if include.pub.pdf %}<a class="btn btn-sm btn-outline-secondary" href="{{ include.pub.pdf }}">PDF</a>{% endif %}
+                {% for link in include.pub.links %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ link.url }}">{{ link.name }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

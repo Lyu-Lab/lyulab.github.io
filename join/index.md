@@ -10,6 +10,8 @@ The Lyu lab is actively recruiting scientists at every career stage. We welcome 
 
 ## Postdoctoral Fellows
 
+**We currently have one open postdoctoral position** — [view the posting and apply on the Rockefeller careers portal](https://careers.rockefeller.edu/jobs/2108?lang=en-us).
+
 We are looking for motivated postdocs. To apply, email JK at [jlyu@rockefeller.edu](mailto:jlyu@rockefeller.edu) with a **one-page cover letter and CV**.
 
 Ideal qualifications:
@@ -31,7 +33,7 @@ Prospective graduate students should apply directly to any of these programs.
 
 ## Research Assistants
 
-Candidates with a bachelor's degree in chemistry, biology, computer science, engineering, physics, or a related field can apply through the Rockefeller careers portal for **"Research Assistant – Laboratory of Computational Molecular Discovery."**
+**We currently have one open research assistant position.** Candidates with a bachelor's degree in chemistry, biology, computer science, engineering, physics, or a related field can [apply through the Rockefeller careers portal](https://careers.rockefeller.edu/jobs/2111?lang=en-us) for **"Research Assistant – Laboratory of Computational Molecular Discovery."**
 
 ## Undergraduates
 

@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="365" height="365" viewBox="0 0 365 365" role="img" aria-label="Photo placeholder">
-  <rect width="365" height="365" fill="#e9ecef"/>
-  <circle cx="182.5" cy="140" r="70" fill="#adb5bd"/>
-  <path d="M62 330c0-66 54-110 120.5-110S303 264 303 330z" fill="#adb5bd"/>
-  <text x="182.5" y="355" font-family="sans-serif" font-size="16" fill="#6c757d" text-anchor="middle">photo coming soon</text>
+  <rect width="365" height="365" fill="#eef4fc"/>
+  <circle cx="182.5" cy="145" r="66" fill="#bcd4ef"/>
+  <path d="M70 328c0-62 50-104 112.5-104S295 266 295 328z" fill="#bcd4ef"/>
 </svg>
