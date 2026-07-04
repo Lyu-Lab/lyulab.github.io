@@ -1,0 +1,54 @@
+# Rotation students archive — students who rotated through the lab.
+# Add one entry per student (name, program, optional term). Renders on the People page.
+
+- name: Chengyuan Li
+  program: Tri-Institutional PhD Program in Computational Biology & Medicine
+  term: "2026"
+- name: Chloe Schaefer
+  program: David Rockefeller Graduate Program
+  term: "2025"
+- name: Christopher Anchan
+  program: Tri-Institutional MD-PhD Program
+  term: "2024"
+- name: Eric Yuan
+  program: Tri-Institutional MD-PhD Program
+  term: "2025"
+- name: Hoyin Chu
+  program: Tri-Institutional PhD Program in Computational Biology & Medicine
+  term: "2024"
+- name: Isaac Nathoo
+  program: Tri-Institutional MD-PhD Program
+  term: "2023"
+- name: Jaina Wollowitz
+  program: Tri-Institutional PhD Program in Chemical Biology
+  term: "2023"
+- name: Joshua Lee
+  program: Tri-Institutional PhD Program in Chemical Biology
+  term: "2025"
+- name: Kasey Cervantes
+  program: Tri-Institutional PhD Program in Computational Biology & Medicine
+  term: "2024"
+- name: Kendall Lemons
+  program: Tri-Institutional PhD Program in Computational Biology & Medicine
+  term: "2023"
+- name: Margaret Hoang
+  program: Tri-Institutional PhD Program in Chemical Biology
+  term: "2024"
+- name: Matthew Shabet
+  program: Tri-Institutional PhD Program in Computational Biology & Medicine
+  term: "2026"
+- name: Shuyao Su
+  program: Tri-Institutional PhD Program in Chemical Biology
+  term: "2025"
+- name: Tom Xu
+  program: David Rockefeller Graduate Program
+  term: "2026"
+- name: Tona Gonzalez
+  program: Tri-Institutional MD-PhD Program
+  term: "2023"
+- name: Victory Yinka-Banjo
+  program: Tri-Institutional PhD Program in Computational Biology & Medicine
+  term: "2026"
+- name: Yuanhuang Chen
+  program: Tri-Institutional PhD Program in Chemical Biology
+  term: "2023"

@@ -285,6 +285,31 @@ a:hover, a:focus { color: var(--brand-dark); text-decoration: underline; }
 .alum-current { color: var(--ink); font-size: .95rem; margin-left: auto; }
 .alum-current::before { content: ""; }
 
+/* ---- Rotation students --------------------------------------------------- */
+
+.rotation-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.4rem;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.rotation-list { display: flex; flex-direction: column; }
+.rotation-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .25rem 1rem;
+  padding: .6rem .25rem;
+  border-bottom: 1px solid var(--line);
+}
+.rotation-row:last-child { border-bottom: none; }
+.rotation-name { font-weight: 600; color: var(--ink); }
+.rotation-program { color: var(--muted); font-size: .95rem; }
+.rotation-term { white-space: nowrap; }
+
 /* ---- Research ------------------------------------------------------------ */
 
 .research-intro {

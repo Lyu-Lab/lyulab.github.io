@@ -69,3 +69,16 @@ group: members
 {% endfor %}
 </div>
 {% endif %}
+
+{% assign rotations = site.data.rotation_students %}
+{% if rotations and rotations != empty %}
+<h2 class="rotation-heading">Rotation students</h2>
+<div class="rotation-list">
+{% for r in rotations %}
+        <div class="rotation-row">
+            <div class="rotation-name">{{ r.name }}</div>
+            <div class="rotation-program">{{ r.program }}{% if r.term %} <span class="rotation-term">&middot; {{ r.term }}</span>{% endif %}</div>
+        </div>
+{% endfor %}
+</div>
+{% endif %}
