@@ -11,7 +11,7 @@ group: publications
 {% assign selected = site.publications | where_exp: "p", "p.key == true" | sort: "pub_date" | reverse %}
 {% assign additional = site.publications | where_exp: "p", "p.key != true" | sort: "pub_date" | reverse %}
 
-<h2 class="pub-section">Selected publications after Rockefeller</h2>
+<h2 class="pub-section">Selected publications</h2>
 {% for publication in selected %}
     {% include pub_card.html pub=publication %}
 {% endfor %}
