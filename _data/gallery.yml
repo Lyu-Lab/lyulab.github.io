@@ -1,0 +1,12 @@
+# Lab photo gallery — add one entry per photo (they render in the order listed).
+#   image   — path under static/img/gallery/ (upload the image file there first)
+#   caption — shown under the photo
+
+- image: /static/img/gallery/holiday-bowling-2025.jpg
+  caption: 2025 holiday bowling party
+- image: /static/img/gallery/escape-room-2024.jpg
+  caption: 2024 holiday party — escape room
+- image: /static/img/gallery/paper-lunch-2024.jpg
+  caption: 2024 paper lunch
+- image: /static/img/gallery/lab-bbq-2024.jpg
+  caption: 2024 lab BBQ

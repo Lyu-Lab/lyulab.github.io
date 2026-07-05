@@ -70,7 +70,7 @@ group: members
 </div>
 {% endif %}
 
-{% assign rotations = site.data.rotation_students %}
+{% assign rotations = site.data.rotation_students | sort: "term" | reverse %}
 {% if rotations and rotations != empty %}
 <h2 class="rotation-heading">Rotation students</h2>
 <div class="rotation-list">

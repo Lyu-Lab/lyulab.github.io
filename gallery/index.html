@@ -1,0 +1,21 @@
+---
+title: Lyu Lab Gallery
+layout: default
+group: gallery
+---
+
+<h1>Gallery</h1>
+
+{% assign photos = site.data.gallery %}
+{% if photos and photos != empty %}
+<div class="gallery-grid">
+{% for photo in photos %}
+    <figure class="gallery-item">
+        <img src="{{ photo.image }}" alt="{{ photo.caption | default: 'Lyu Lab' }}" loading="lazy" decoding="async" onerror="this.closest('figure').style.display='none'">
+        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+    </figure>
+{% endfor %}
+</div>
+{% else %}
+<p>Photos coming soon.</p>
+{% endif %}
