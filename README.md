@@ -16,11 +16,14 @@ Built with [Jekyll](https://jekyllrb.com/) and deployed to GitHub Pages via GitH
 | `research/` | **Research** page |
 | `publications/` | **Publications** page (the layout; the papers live in `_publications/`) |
 | `members/` | **People** page (the layout; the profiles live in `_members/`) |
+| `gallery/` | **Gallery** page (the layout; the photo list lives in `_data/gallery.yml`) |
 | `join/` | **Positions** page |
 | `contact/` | **Contact** page |
 | `_members/` | **One file per person** — edit this to change your profile |
 | `_publications/` | **One file per paper** |
+| `_data/gallery.yml` | **The gallery photo list** — one entry (photo + caption) per picture |
 | `static/img/members/` | Member photos |
+| `static/img/gallery/` | Gallery (lab life) photos |
 | `static/img/research/` | Research figures |
 | `static/css/custom.css` | Site styling (colors, fonts, layout) |
 | `_data/navigation.yml` | Top navigation menu |
@@ -104,6 +107,20 @@ Leave out `key:` for older papers — they appear in the "Complete list of publi
 ### 4. When someone leaves the lab (alumni)
 
 In their `_members/` file: add `alumni: true`, set `enddate: [YYYY-MM-DD]`, and add `current: "New position, Institution"`. They move to the **Alumni** section, sorted by leaving date.
+
+### 5. Add a photo to the Gallery
+
+Two steps — upload the picture, then list it:
+
+1. Add the image file to `static/img/gallery/` (`.jpg` or `.png`; landscape works best since photos are cropped to a 4:3 thumbnail).
+2. Add an entry to `_data/gallery.yml` — photos appear **in the order listed**, so put new ones where you want them:
+
+```yaml
+- image: /static/img/gallery/lab-picnic-2026.jpg   # must match the filename you uploaded
+  caption: 2026 lab picnic                          # shown under the photo
+```
+
+That's it — no HTML to touch. The Gallery page builds itself from this list, and any entry whose image file is missing is skipped automatically.
 
 ---
 
