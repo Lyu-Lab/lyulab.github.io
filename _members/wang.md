@@ -7,4 +7,7 @@ image: /static/img/members/wang.jpg
 position: Graduate Student
 email: yaw4006 (at) med.cornell.edu
 education: "B.S. & B.A., 2022, University of California, Berkeley"
+linkedin: yangzhiwang
+github: robby-wang
+scholar: 8N32LO0AAAAJ
 ---
