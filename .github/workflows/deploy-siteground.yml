@@ -29,6 +29,9 @@ jobs:
         run: jekyll build
         env:
           JEKYLL_ENV: production
+          # The repo's Gemfile pins the github-pages gem; ignore it and build
+          # with plain Jekyll (the site uses no plugins, so output is identical).
+          JEKYLL_NO_BUNDLER_REQUIRE: 'true'
 
       - name: Drop non-public files
         run: rm -f _site/CNAME _site/DEPLOY.md _site/LICENSE
