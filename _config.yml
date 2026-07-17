@@ -6,6 +6,10 @@ url: "https://lyulab.org"
 permalink: pretty
 markdown: kramdown
 
+# Jekyll skips dotfiles by default; ship the .htaccess so Apache gets it.
+include:
+        - .htaccess
+
 exclude:
         - .sass-cache/
         - .jekyll-cache/

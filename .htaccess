@@ -1,0 +1,7 @@
+# The site is fully static and redeploys on every merge, so HTML pages must
+# never be served stale. Tell caches (incl. the browser) to revalidate HTML.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html?$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
